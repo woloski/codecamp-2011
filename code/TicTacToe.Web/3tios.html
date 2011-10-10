@@ -31,8 +31,8 @@
 
     <script type="text/javascript">
         var viewModel;
-        var gameQueueId = getQueryVariable("id");
-        var nullGameId = "00000000-0000-0000-0000-000000000000";
+        var gameId = getQueryVariable("id");
+        var isOwner = getQueryVariable("owner");
 
         function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
@@ -56,7 +56,8 @@
 
             var controller = new TicTacToeController(viewModel, board, game, socket);
 
-            controller.setGameQueueId(gameQueueId);
+            controller.setGameId(gameId);
+            controller.setIsOwner(isOwner);
 
             controller.start();
         }

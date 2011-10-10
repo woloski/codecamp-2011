@@ -17,9 +17,8 @@ function TicTacToeController(viewModel, board, game, socket)
     this.viewModel.noPlayers(users.length);
 
 
-    this.socket.emit('join', 'tictactoe');
+    this.socket.emit('join', this.viewModel.gameId());
     this.socket.on('command', onNewCommand);
-    this.viewModel.gameId('tictactoe');
     this.joined = true;
 	this.started = true;
 
@@ -41,15 +40,12 @@ function TicTacToeController(viewModel, board, game, socket)
 };
 
 TicTacToeController.prototype.start = function () {
-    if (this.viewModel.gameQueueId() != null) {
+    if (this.viewModel.isOwner()) {
         this.viewModel.playerColor(TTTColor.Cross);
     }
     else {
         this.viewModel.playerColor(TTTColor.Circle);
         var controller = this;
-        controller.viewModel.isOwner(true);
-        controller.setGameQueueId("room");
-        controller.viewModel.inviteURL(document.location.href + "?id=" + "room");
     }
 };
 
@@ -86,7 +82,11 @@ TicTacToeController.prototype.onMove = function (x, y) {
     this.socket.emit('command', action);
 };
 
-TicTacToeController.prototype.setGameQueueId = function (gameQueueId) {
-    this.viewModel.gameQueueId(gameQueueId);
+TicTacToeController.prototype.setGameId = function (gameId) {
+    this.viewModel.gameId(gameId);
+};
+
+TicTacToeController.prototype.setIsOwner = function (isOwner) {
+    this.viewModel.isOwner(isOwner);
 };
 

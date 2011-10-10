@@ -4,7 +4,6 @@ function TicTacToeViewModel() {
     this.isOwner = ko.observable(false);
     this.players = ko.observableArray();
 
-    this.gameQueueId = ko.observable(null);
     this.gameId = ko.observable(null);
 
     this.noPlayers = ko.observable(0);
