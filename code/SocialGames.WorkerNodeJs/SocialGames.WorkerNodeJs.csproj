@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <Content Include="gameex.js">
+    <Content Include="gameserver.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="node_modules\socket.io-client\.npmignore">

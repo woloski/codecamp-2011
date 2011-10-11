@@ -22,7 +22,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SocialGames.Web", "SocialGa
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "4073"
+		VWDPort = "8081"
+		VWDDynamicPort = "false"
+		VWDVirtualPath = "/"
 	EndProjectSection
 EndProject
 Global

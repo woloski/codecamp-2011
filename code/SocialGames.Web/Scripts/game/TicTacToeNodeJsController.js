@@ -40,7 +40,6 @@ TicTacToeController.prototype.start = function () {
     }
     else {
         this.viewModel.playerColor(TTTColor.Circle);
-        var controller = this;
     }
 };
 
