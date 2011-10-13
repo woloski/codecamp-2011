@@ -1,5 +1,4 @@
 <script src="Scripts/jquery-1.6.2.js"></script>
-<script src="Scripts/socket.io.js"></script>
 <h1>The Ultimate Paint ;-)</h1>
 <canvas id="canvas" width="500" height="800"/>
 <script>
@@ -7,15 +6,6 @@
     $(document).ready(function() {
 		var messages = new Array();
 		var paint;
-		
-		var socket = io.connect("http://localhost:8080");
-	
-		socket.on('newMessage', newMessage);
-		
-		function newMessage(msg) {
-			messages.push(msg);
-			redraw();
-		}
 	
 		var canvas = document.getElementById('canvas');
 		context = canvas.getContext("2d");
@@ -49,7 +39,6 @@
 		{
 			var message = { from: from, to: to};
 			messages.push(message);
-			socket.emit("sendMessage", message);
 		};
 		
 		function redraw()
