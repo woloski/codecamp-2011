@@ -34,19 +34,11 @@ TicTacToeGame.prototype.nextColor = function (color) {
 };
 
 TicTacToeGame.prototype.isTie = function () {
-    if (this.hasWinner())
-        return false;
-
-    for (var x = 0; x < 3; x++)
-        for (var y = 0; y < 3; y++)
-            if (this.board[x][y] == TTTColor.Empty)
-                return false;
-
-    return true;
+    return false;
 };
 
 TicTacToeGame.prototype.hasWinner = function () {
-    return this.getWinner() != TTTColor.Empty;
+    return false;
 };
 
 TicTacToeGame.prototype.getWinner = function () {
