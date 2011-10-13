@@ -52,11 +52,9 @@
                 </fieldset>
             </div>
         </div>
-            <script type="text/javascript">
-                var viewModel;
-
+            <script type="text/javascript">              
                 $(function () {
-                    viewModel = new TicTacToeViewModel();
+                    var viewModel = new TicTacToeViewModel();
                     ko.applyBindings(viewModel);
 
                     var canvas = document.getElementById("board");
