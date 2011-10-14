@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TicTacToe</title>
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.6.2.js" type="text/javascript"></script>
+    <script src="Scripts/jQuery.tmpl.js" type="text/javascript"></script>
+    <script src="Scripts/knockout-1.2.1.js" type="text/javascript"></script>
+    <style type="text/css">
+        body {
+            background-color: #5c87b2;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>Social Games - TicTacToe</h1>
+            </div>
+            <div id="logindisplay">
+                <br />
+            </div>
+            <nav>
+                <br />
+            </nav>
+        </header>
+        <section id="main">
+        
+        <script src="Scripts/game/TicTacToeViewModel.js" type="text/javascript"></script>
+        <script src="Scripts/game/TicTacToeBoard.js" type="text/javascript"></script>             
+        <script src="Scripts/game/TicTacToeGame.js" type="text/javascript"></script>
+        <script src="Scripts/game/TicTacToeController.js" type="text/javascript"></script>
+
+        <div id="main">
+            <div>
+                <fieldset>
+                    <legend>Game</legend>
+                    <div data-bind="visible: currentColor() == TTTColor.Cross">
+                        X Turn</div>
+                    <div data-bind="visible: currentColor() == TTTColor.Circle">
+                        O Turn</div>
+                    <div data-bind="visible: isTie()">
+                        Tie!!</div>
+                    <div data-bind="visible: winnerColor() == TTTColor.Cross">
+                        X won!!</div>
+                    <div data-bind="visible: winnerColor() == TTTColor.Circle">
+                        O won!!</div>
+
+                    <canvas id="board" width="300" height="300"></canvas>
+                </fieldset>
+            </div>
+        </div>
+            <script type="text/javascript">
+
+
+                $(function () {
+                    // Game parameters
+                    var gameId = getQueryVariable("id");
+                    var isFirst = getQueryVariable("first");
+
+                    var viewModel = new TicTacToeViewModel();
+                    ko.applyBindings(viewModel);
+
+                    var canvas = document.getElementById("board");
+                    var board = new TicTacToeBoard(canvas);
+                    var game = new TicTacToeGame();
+
+                    var controller = new TicTacToeController(viewModel, board, game, gameId);
+
+                    controller.start(isFirst);
+                });
+
+                function getQueryVariable(variable) {
+                    var query = window.location.search.substring(1);
+                    var vars = query.split("&");
+
+                    for (var i = 0; i < vars.length; i++) {
+                        var pair = vars[i].split("=");
+                        if (pair[0] == variable) {
+                            return pair[1];
+                        }
+                    }
+                }
+            </script>
+        </section>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
