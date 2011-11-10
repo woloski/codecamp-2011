@@ -1,8 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SocialGames.Web", "SocialGames.Web\", "{52327E55-8D44-4777-9B46-F6E40EA183AB}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "localhost", "http://localhost:8081", "{60F09116-AC98-412B-BEDF-F8A7870073FF}"
 	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/SocialGames.Web"
 		Debug.AspNetCompiler.PhysicalPath = "SocialGames.Web\"
@@ -18,21 +19,16 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SocialGames.Web", "SocialGa
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "8081"
-		VWDDynamicPort = "false"
-		VWDVirtualPath = "/"
+		SlnRelativePath = "SocialGames.Web\"
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{52327E55-8D44-4777-9B46-F6E40EA183AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52327E55-8D44-4777-9B46-F6E40EA183AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52327E55-8D44-4777-9B46-F6E40EA183AB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{52327E55-8D44-4777-9B46-F6E40EA183AB}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{60F09116-AC98-412B-BEDF-F8A7870073FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F09116-AC98-412B-BEDF-F8A7870073FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
