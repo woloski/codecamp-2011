@@ -36,18 +36,19 @@
         <div id="main">
             <div>
                 <fieldset>
-                    <legend>Game</legend>
-                    <div data-bind="visible: currentColor() == TTTColor.Cross">
-                        X Turn</div>
-                    <div data-bind="visible: currentColor() == TTTColor.Circle">
-                        O Turn</div>
-                    <div data-bind="visible: isTie()">
-                        Tie!!</div>
-                    <div data-bind="visible: winnerColor() == TTTColor.Cross">
-                        X won!!</div>
-                    <div data-bind="visible: winnerColor() == TTTColor.Circle">
-                        O won!!</div>
-
+                    <legend>TA-TE-TI</legend>
+                    <div style="text-align: right">
+                        <div style="color: blue" data-bind="visible: currentColor() == TTTColor.Cross">
+                            Es el turno de: X</div>
+                        <div style="color: green" data-bind="visible: currentColor() == TTTColor.Circle">
+                            Es el turno de: O</div>
+                        <div data-bind="visible: isTie()">
+                            EMPATE!!</div>
+                        <div data-bind="visible: winnerColor() == TTTColor.Cross">
+                            <h1>GANO X!!</h1></div>
+                        <div data-bind="visible: winnerColor() == TTTColor.Circle">
+                            <h1>GANO O!!</h1></div>
+                    </div>
                     <canvas id="board" width="300" height="300"></canvas>
                 </fieldset>
             </div>
